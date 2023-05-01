@@ -27,15 +27,6 @@ const EmployeeDetail = () => {
 
 	const submitHandle = (e) => {
 		e.preventDefault();
-
-		const newEmployee = {
-			employeeId,
-			name,
-			role,
-			phone,
-		};
-
-		console.log(newEmployee);
 	};
 
 	return (
