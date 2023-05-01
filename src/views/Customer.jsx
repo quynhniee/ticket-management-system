@@ -36,7 +36,7 @@ const Customer = () => {
 			<table className="table align-middle mb-0 bg-white">
 				<thead className="bg-light">
 					<tr>
-						<th>Empoyee ID</th>
+						<th>Customer ID</th>
 						<th>Name</th>
 						<th>Phone number</th>
 						<th>Address</th>
