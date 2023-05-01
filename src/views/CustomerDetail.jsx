@@ -11,15 +11,7 @@ const CustomerDetail = () => {
 			? {}
 			: {
 					// Get API
-<<<<<<< HEAD
 					id: "CHN001",
-=======
-<<<<<<< HEAD
-					id: "E001",
-=======
-					id: "CHN001",
->>>>>>> main
->>>>>>> b4a9d302a87d81d60bcf44d4c3e6baaea40fd20d
 					Name: "NGUYEN VAN A",
 					phoneNumber: "0000000000",
 					Address: "Mộ Lao-Hà Đông-Hà Nội",
