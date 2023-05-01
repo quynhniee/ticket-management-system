@@ -24,7 +24,6 @@ const EmployeeDetail = () => {
 	const nameChangeHandle = (e) => setName(e.target.value);
 	const roleChangeHandle = (e) => setRole(e.target.value);
 	const phoneChangeHandle = (e) => setPhone(e.target.value);
-
 	const submitHandle = (e) => {
 		e.preventDefault();
 	};
@@ -108,10 +107,7 @@ const EmployeeDetail = () => {
 					<Link to="/" className="btn btn-outline-warning mr-4">
 						Cancel
 					</Link>
-					<button
-						type="submit"
-						className="btn btn-outline-primary mb-4"
-					>
+					<button type="submit" className="btn btn-outline-primary mb-4">
 						Save
 					</button>
 				</div>
