@@ -1,31 +1,31 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-const EmployeeDetail = () => {
+const CustomerDetail = () => {
 	const { id } = useParams();
 
-	const title = id === "add" ? "Add Employee" : "Employee Detail";
+	const title = id === "add" ? "Add Customer" : "Customer Detail";
 
-	const employee =
+	const customer =
 		id === "add"
 			? {}
 			: {
 					// Get API
-					e_id: "E001",
-					FullName: "NGUYEN VAN A",
-					Role: "E",
+					id: "CHN001",
+					Name: "NGUYEN VAN A",
 					phoneNumber: "0000000000",
+					Address: "Mộ Lao-Hà Đông-Hà Nội",
 			  };
 
-	const [employeeId, setEmployeeId] = useState(employee.e_id);
-	const [name, setName] = useState(employee.FullName);
-	const [role, setRole] = useState(employee.Role);
-	const [phone, setPhone] = useState(employee.phoneNumber);
+	const [customerId, setCustomerId] = useState(customer.id);
+	const [name, setName] = useState(customer.Name);
+	const [phone, setPhone] = useState(customer.phoneNumber);
+	const [address, setAddress] = useState(customer.Address);
 
-	const employeeIdChangeHandle = (e) => setEmployeeId(e.target.value);
+	const customerIdChangeHandle = (e) => setCustomerId(e.target.value);
 	const nameChangeHandle = (e) => setName(e.target.value);
-	const roleChangeHandle = (e) => setRole(e.target.value);
 	const phoneChangeHandle = (e) => setPhone(e.target.value);
+	const addressChangeHandle = (e) => setAddress(e.target.value);
 	const submitHandle = (e) => {
 		e.preventDefault();
 	};
@@ -38,16 +38,16 @@ const EmployeeDetail = () => {
 				<div className="row mb-4">
 					<div className="col">
 						<div className="form-outline">
-							<label className="form-label" htmlFor="employeeId">
-								Employee ID
+							<label className="form-label" htmlFor="customerId">
+								Customer ID
 							</label>
 							<input
 								type="text"
-								id="employeeId"
+								id="customerId"
 								className="form-control"
 								required
-								value={employeeId}
-								onChange={employeeIdChangeHandle}
+								value={customerId}
+								onChange={customerIdChangeHandle}
 							/>
 						</div>
 					</div>
@@ -71,24 +71,6 @@ const EmployeeDetail = () => {
 				<div className="row mb-4">
 					<div className="col">
 						<div className="form-outline">
-							<label className="form-label" htmlFor="role">
-								Role
-							</label>
-							<select
-								className="form-select"
-								id="role"
-								aria-label="Floating label select example"
-								value={role}
-								onChange={roleChangeHandle}
-							>
-								<option value="G">Director</option>
-								<option value="Q">Manager</option>
-								<option value="E">Employee</option>
-							</select>
-						</div>
-					</div>
-					<div className="col">
-						<div className="form-outline">
 							<label className="form-label" htmlFor="phone">
 								Phone number
 							</label>
@@ -99,6 +81,20 @@ const EmployeeDetail = () => {
 								required
 								value={phone}
 								onChange={phoneChangeHandle}
+							/>
+						</div>
+					</div>
+					<div className="col">
+						<div className="form-outline">
+							<label className="form-label" htmlFor="name">
+								Address
+							</label>
+							<input
+								type="text"
+								id="name"
+								className="form-control"
+								value={address}
+								onChange={addressChangeHandle}
 							/>
 						</div>
 					</div>
@@ -118,4 +114,4 @@ const EmployeeDetail = () => {
 	);
 };
 
-export default EmployeeDetail;
+export default CustomerDetail;
