@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./views/Home";
 
 const BookTicket = lazy(() => import("./views/BookTicket"));
+const EmployeeDetail = lazy(() => import("./views/EmployeeDetail"));
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Routes>
             <Route index path="/" element={<Home />} />
             <Route path="/book-ticket" element={<BookTicket />} />
+            <Route path="/employee-detail" element={<EmployeeDetail />} />
           </Routes>
         </BrowserRouter>
       </Suspense>
