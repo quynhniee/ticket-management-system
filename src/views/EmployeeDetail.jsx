@@ -24,8 +24,18 @@ const EmployeeDetail = () => {
 	const nameChangeHandle = (e) => setName(e.target.value);
 	const roleChangeHandle = (e) => setRole(e.target.value);
 	const phoneChangeHandle = (e) => setPhone(e.target.value);
+
 	const submitHandle = (e) => {
 		e.preventDefault();
+
+		const newEmployee = {
+			employeeId,
+			name,
+			role,
+			phone,
+		};
+
+		console.log(newEmployee);
 	};
 
 	return (
