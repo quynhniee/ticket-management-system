@@ -12,7 +12,7 @@ const Vu = () => {
   const submitHandle = (e) => {
     e.preventDefault();
     console.log(customerId, branchId);
-    // navigate("/tickets");
+    navigate(`/tickets?customerId=${customerId}&branchId=${branchId}`);
   };
 
   return (
