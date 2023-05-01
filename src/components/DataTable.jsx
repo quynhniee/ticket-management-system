@@ -31,13 +31,15 @@ const DataTable = ({ data, ths }) => {
       <thead>
         <tr>
           {ths.map((th) => (
-            <th scope="col">{th}</th>
+            <th scope="col" key={th}>
+              {th}
+            </th>
           ))}
         </tr>
       </thead>
       <tbody>
         {data.map((ticket, index) => (
-          <Ticket index={index} ticket={ticket} />
+          <Ticket index={index} ticket={ticket} key={ticket.id} />
         ))}
       </tbody>
     </table>

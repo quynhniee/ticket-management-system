@@ -1,24 +1,25 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const BookTicket = () => {
-  const [userId, setUserId] = useState();
+  const [customerId, setCustomerId] = useState();
   const [employeeId, setEmployeeId] = useState();
   const [trainRideId, setTrainRideId] = useState();
   const [seatType, setSeatType] = useState("bus");
   const [ticketPrice, setTicketPrice] = useState();
   const [discount, setDiscount] = useState(0);
 
-  const userIdChangeHandle = (e) => setUserId(e.target.value);
+  const customerIdChangeHandle = (e) => setCustomerId(e.target.value);
   const employeeIdChangeHandle = (e) => setEmployeeId(e.target.value);
   const trainRideIdChangeHandle = (e) => setTrainRideId(e.target.value);
-  const seatTypeChangeHandle = (e) => setSeatType(e);
+  const seatTypeChangeHandle = (e) => setSeatType(e.target.value);
   const ticketPriceChangeHandle = (e) => setTicketPrice(+e.target.value);
   const discountChangeHandle = (e) => setDiscount(+e.target.value);
 
   const submitHandle = (e) => {
     e.preventDefault();
     console.log(
-      userId,
+      customerId,
       employeeId,
       trainRideId,
       seatType,
@@ -41,8 +42,8 @@ const BookTicket = () => {
                 type="text"
                 id="customerId"
                 className="form-control"
-                value={userId}
-                onChange={userIdChangeHandle}
+                value={customerId}
+                onChange={customerIdChangeHandle}
               />
             </div>
           </div>
@@ -133,8 +134,11 @@ const BookTicket = () => {
         </div>
         <hr />
 
-        <div className="d-flex justify-content-end">
-          <button type="submit" className="btn btn-outline-primary mb-4">
+        <div className="d-flex justify-content-end gap-2">
+          <Link to="/tickets" className="btn btn-warning">
+            Cancel
+          </Link>
+          <button type="submit" className="btn btn-outline-primary">
             Save
           </button>
         </div>
