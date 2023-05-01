@@ -11,7 +11,7 @@ const CustomerDetail = () => {
 			? {}
 			: {
 					// Get API
-					id: "E001",
+					id: "CHN001",
 					Name: "NGUYEN VAN A",
 					phoneNumber: "0000000000",
 					Address: "Mộ Lao-Hà Đông-Hà Nội",
