@@ -7,6 +7,8 @@ const BookTicket = lazy(() => import("./views/BookTicket"));
 const Employee = lazy(() => import("./views/Employee"));
 const EmployeeDetail = lazy(() => import("./views/EmployeeDetail"));
 const Tickets = lazy(() => import("./views/Tickets"));
+const Quynh = lazy(() => import("./layouts/Quynh"));
+const Vu = lazy(() => import("./layouts/Vu"));
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route index path="/" element={<Home />} />
+            <Route path="/quynhnn" element={<Quynh />} />
+            <Route path="/vuna" element={<Vu />} />
             <Route path="/tickets" element={<Tickets />} />
             <Route path="/book-ticket" element={<BookTicket />} />
             <Route path="/employee-detail" element={<EmployeeDetail />} />
