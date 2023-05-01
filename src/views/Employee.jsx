@@ -67,10 +67,10 @@ const Employee = () => {
 								</Link>
 								<button
 									type="button"
-									className="btn btn-outline-danger mx-2"
+									className="btn btn-outline-success mx-3"
 									data-mdb-ripple-color="dark"
 								>
-									Delete
+									Show Tickets
 								</button>
 							</td>
 						</tr>
