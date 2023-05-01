@@ -9,8 +9,9 @@ const Quynh = () => {
   const submitHandle = (e) => {
     e.preventDefault();
     console.log(employeeId);
-    navigate("/tickets");
+    navigate(`/tickets?employeeId=${employeeId}`);
   };
+
   return (
     <div className="container py-5">
       <p className="mb-2">*Đặt vé tại đây</p>
