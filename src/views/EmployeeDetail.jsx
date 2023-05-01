@@ -1,17 +1,29 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const EmployeeDetail = () => {
-  const [employeeId, setEmployeeId] = useState();
-  const [name, setName] = useState();
-  const [role, setRole] = useState("E");
-  const [phone, setPhone] = useState();
+  const { id } = useParams();
+
+  const employee =
+    id == "add"
+      ? {}
+      : {
+          // Get API
+          e_id: "E001",
+          FullName: "NGUYEN VAN A",
+          Role: "E",
+          phoneNumber: "0000000000",
+        };
+
+  const [employeeId, setEmployeeId] = useState(employee.e_id);
+  const [name, setName] = useState(employee.FullName);
+  const [role, setRole] = useState(employee.Role);
+  const [phone, setPhone] = useState(employee.phoneNumber);
 
   const employeeIdChangeHandle = (e) => setEmployeeId(e.target.value);
   const nameChangeHandle = (e) => setName(e.target.value);
   const roleChangeHandle = (e) => setRole(e.target.value);
   const phoneChangeHandle = (e) => setPhone(e.target.value);
-
   const submitHandle = (e) => {
     e.preventDefault();
   };

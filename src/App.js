@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./views/Home";
 
 const BookTicket = lazy(() => import("./views/BookTicket"));
+const Employee = lazy(() => import("./views/Employee"));
 const EmployeeDetail = lazy(() => import("./views/EmployeeDetail"));
 const Tickets = lazy(() => import("./views/Tickets"));
 
@@ -17,6 +18,7 @@ function App() {
             <Route path="/tickets" element={<Tickets />} />
             <Route path="/book-ticket" element={<BookTicket />} />
             <Route path="/employee-detail" element={<EmployeeDetail />} />
+            <Route path="/employee-detail/:id" element={<EmployeeDetail />} />
           </Routes>
         </BrowserRouter>
       </Suspense>
