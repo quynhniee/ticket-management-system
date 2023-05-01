@@ -1,31 +1,25 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-const CustomerDetail = () => {
+const TrainRideDetail = () => {
 	const { id } = useParams();
 
-	const title = id === "add" ? "Add Customer" : "Customer Detail";
+	const title = id === "add" ? "Add TrainRide" : "TrainRide Detail";
 
-	const customer =
+	const trainRide =
 		id === "add"
 			? {}
 			: {
-					// Get API
-					id: "CHN001",
-					Name: "NGUYEN VAN A",
-					phoneNumber: "0000000000",
-					Address: "Mộ Lao-Hà Đông-Hà Nội",
+					id: "TrRiHN001",
+					DepatureTime: "2023-01-12 13:23:44",
+					DepatureStation: "DHSta",
+					Destination: "LCSta",
+					IdTrain: "TrR001",
 			  };
 
-	const [customerId, setCustomerId] = useState(customer.id);
-	const [name, setName] = useState(customer.Name);
-	const [phone, setPhone] = useState(customer.phoneNumber);
-	const [address, setAddress] = useState(customer.Address);
+	const [time, setTime] = useState(trainRide.DepatureTime);
 
-	const customerIdChangeHandle = (e) => setCustomerId(e.target.value);
-	const nameChangeHandle = (e) => setName(e.target.value);
-	const phoneChangeHandle = (e) => setPhone(e.target.value);
-	const addressChangeHandle = (e) => setAddress(e.target.value);
+	const timeChangeHandle = (e) => setTime(e.target.value);
 	const submitHandle = (e) => {
 		e.preventDefault();
 	};
@@ -38,31 +32,30 @@ const CustomerDetail = () => {
 				<div className="row mb-4">
 					<div className="col">
 						<div className="form-outline">
-							<label className="form-label" htmlFor="customerId">
-								Customer ID
+							<label className="form-label" htmlFor="trainRideId">
+								TrainRide ID
 							</label>
 							<input
 								type="text"
-								id="customerId"
+								id="trainRideId"
 								className="form-control"
-								required
-								value={customerId}
-								onChange={customerIdChangeHandle}
+								value={trainRide.id}
+								readOnly={id !== "add"}
 							/>
 						</div>
 					</div>
 
 					<div className="col">
 						<div className="form-outline">
-							<label className="form-label" htmlFor="name">
-								Name
+							<label className="form-label" htmlFor="time">
+								Depature Time
 							</label>
 							<input
 								type="text"
-								id="name"
+								id="time"
 								className="form-control"
-								value={name}
-								onChange={nameChangeHandle}
+								value={time}
+								onChange={timeChangeHandle}
 							/>
 						</div>
 					</div>
@@ -71,32 +64,45 @@ const CustomerDetail = () => {
 				<div className="row mb-4">
 					<div className="col">
 						<div className="form-outline">
-							<label className="form-label" htmlFor="phone">
-								Phone number
+							<label className="form-label" htmlFor="depatureStation">
+								Depature Station
 							</label>
 							<input
 								type="text"
-								id="phone"
+								id="depatureStation"
 								className="form-control"
-								required
-								value={phone}
-								onChange={phoneChangeHandle}
+								readOnly={id !== "add"}
+								value={trainRide.DepatureStation}
 							/>
 						</div>
 					</div>
 					<div className="col">
 						<div className="form-outline">
-							<label className="form-label" htmlFor="address">
-								Address
+							<label className="form-label" htmlFor="destination">
+								Destination
 							</label>
 							<input
 								type="text"
-								id="address"
+								id="destination"
 								className="form-control"
-								value={address}
-								onChange={addressChangeHandle}
+								value={trainRide.Destination}
+								readOnly={id !== "add"}
 							/>
 						</div>
+					</div>
+				</div>
+				<div className="row mb-4">
+					<div className="form-outline">
+						<label className="form-label" htmlFor="depatureStation">
+							Train ID
+						</label>
+						<input
+							type="text"
+							id="depatureStation"
+							className="form-control"
+							readOnly={id !== "add"}
+							value={trainRide.IdTrain}
+						/>
 					</div>
 				</div>
 				<hr />
@@ -114,4 +120,4 @@ const CustomerDetail = () => {
 	);
 };
 
-export default CustomerDetail;
+export default TrainRideDetail;
