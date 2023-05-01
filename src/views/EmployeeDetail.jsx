@@ -67,8 +67,8 @@ const EmployeeDetail = () => {
                 value={role}
                 onChange={roleChangeHandle}
               >
-                <option value="G">G</option>
-                <option value="Q">Q</option>
+                <option value="G">Director</option>
+                <option value="Q">Manager</option>
                 <option value="E">Employee</option>
               </select>
             </div>
@@ -92,7 +92,7 @@ const EmployeeDetail = () => {
         <hr />
 
         <div className="d-flex justify-content-end">
-          <Link to="/" className="btn btn-outline-warning mr-4">
+          <Link to="/" className="btn btn-outline-warning mb-4">
             Cancel
           </Link>
           <button type="submit" className="btn btn-outline-primary mb-4">
