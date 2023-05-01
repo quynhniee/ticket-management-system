@@ -1,64 +1,58 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Employee = () => {
+const Customer = () => {
 	// Get API
-	const dataEmployee = [
+	const dataCustomer = [
 		{
-			id_e: "E001",
-			FullName: "Nguyễn Văn A001",
-			Role: "E",
+			id: "CHN001",
+			Name: "Nguyễn Văn A001",
 			phoneNumber: "0000000000",
+			Address: "Mộ Lao-Hà Đông-Hà Nội",
 		},
 		{
-			id_e: "E002",
-			FullName: "Nguyễn Văn A002",
-			Role: "E",
+			id: "CHN002",
+			Name: "Nguyễn Văn A002",
 			phoneNumber: "0000000000",
+			Address: "Mộ Lao-Hà Đông-Hà Nội",
 		},
 		{
-			id_e: "E003",
-			FullName: "Nguyễn Văn A003",
-			Role: "G",
+			id: "CHN003",
+			Name: "Nguyễn Văn A003",
 			phoneNumber: "0000000000",
+			Address: "Mộ Lao-Hà Đông-Hà Nội",
 		},
 		{
-			id_e: "E004",
-			FullName: "Nguyễn Văn A004",
-			Role: "Q",
+			id: "CHN004",
+			Name: "Nguyễn Văn A004",
 			phoneNumber: "0000000000",
+			Address: "Mộ Lao-Hà Đông-Hà Nội",
 		},
 	];
 
 	return (
 		<div className="container my-5">
-			<h1 className="text-center mb-5">Employee</h1>
+			<h1 className="text-center mb-5">Customer</h1>
 			<table className="table align-middle mb-0 bg-white">
 				<thead className="bg-light">
 					<tr>
 						<th>Empoyee ID</th>
 						<th>Name</th>
-						<th>Role</th>
 						<th>Phone number</th>
+						<th>Address</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
 				<tbody>
-					{dataEmployee.map((employee) => (
-						<tr key={employee.id_e}>
-							<td>{employee.id_e}</td>
-							<td>{employee.FullName}</td>
-							<td>
-								{employee.Role === "E"
-									? "Nhân viên"
-									: employee.Role === "G"
-									? "Giám đốc"
-									: "Quản lí"}
-							</td>
-							<td>{employee.phoneNumber}</td>
+					{dataCustomer.map((customer) => (
+						<tr key={customer.id}>
+							<td>{customer.id}</td>
+							<td>{customer.Name}</td>
+							<td>{customer.phoneNumber}</td>
+							<td>{customer.Address}</td>
 							<td>
 								<Link
-									to={`${employee.id_e}`}
+									to={`${customer.id}`}
 									type="button"
 									className="btn btn-outline-primary"
 									data-mdb-ripple-color="dark"
@@ -86,4 +80,4 @@ const Employee = () => {
 	);
 };
 
-export default Employee;
+export default Customer;
