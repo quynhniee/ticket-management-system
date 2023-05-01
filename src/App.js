@@ -5,6 +5,7 @@ import Home from "./views/Home";
 
 const BookTicket = lazy(() => import("./views/BookTicket"));
 const EmployeeDetail = lazy(() => import("./views/EmployeeDetail"));
+const Tickets = lazy(() => import("./views/Tickets"));
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route index path="/" element={<Home />} />
+            <Route path="/tickets" element={<Tickets />} />
             <Route path="/book-ticket" element={<BookTicket />} />
             <Route path="/employee-detail" element={<EmployeeDetail />} />
           </Routes>
