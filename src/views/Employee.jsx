@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Employee = () => {
-	const dataEmpoyee = [
+	// Get API
+	const dataEmployee = [
 		{
 			id_e: "E001",
 			Salary: 10000000,
@@ -47,7 +48,7 @@ const Employee = () => {
 					</tr>
 				</thead>
 				<tbody>
-					{dataEmpoyee.map((employee) => (
+					{dataEmployee.map((employee) => (
 						<tr key={employee.id_e}>
 							<td>{employee.id_e}</td>
 							<td>{employee.FullName}</td>
