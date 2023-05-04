@@ -1,33 +1,41 @@
 import React, { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const CustomerDetail = () => {
-	const { id } = useParams();
+	const urlParams = new URLSearchParams(window.location.search);
 
-	const title = id === "add" ? "Add Customer" : "Customer Detail";
+	let customerId = urlParams.get("customerId");
 
-	const customer =
-		id === "add"
-			? {}
-			: {
-					// Get API
-					id: "CHN001",
-					Name: "NGUYEN VAN A",
-					phoneNumber: "0000000000",
-					Address: "Mộ Lao-Hà Đông-Hà Nội",
-			  };
+	const title = !customerId ? "Add Customer" : "Customer Detail";
 
-	const [customerId, setCustomerId] = useState(customer.id);
+	const customer = !customerId
+		? {}
+		: {
+				// Get API
+				id: "CHN001",
+				Name: "NGUYEN VAN A",
+				phoneNumber: "0000000000",
+				Address: "Mộ Lao-Hà Đông-Hà Nội",
+		  };
+
+	const [id, setId] = useState(customer.id);
 	const [name, setName] = useState(customer.Name);
 	const [phone, setPhone] = useState(customer.phoneNumber);
 	const [address, setAddress] = useState(customer.Address);
 
-	const customerIdChangeHandle = (e) => setCustomerId(e.target.value);
+	const idChangeHandle = (e) => setId(e.target.value);
 	const nameChangeHandle = (e) => setName(e.target.value);
 	const phoneChangeHandle = (e) => setPhone(e.target.value);
 	const addressChangeHandle = (e) => setAddress(e.target.value);
 	const submitHandle = (e) => {
 		e.preventDefault();
+		const newCustomer = {
+			id,
+			Name: name,
+			phoneNumber: phone,
+			Address: address,
+		};
+		console.log(newCustomer);
 	};
 
 	return (
@@ -46,8 +54,8 @@ const CustomerDetail = () => {
 								id="customerId"
 								className="form-control"
 								required
-								value={customerId}
-								onChange={customerIdChangeHandle}
+								value={id}
+								onChange={idChangeHandle}
 							/>
 						</div>
 					</div>

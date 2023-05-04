@@ -5,7 +5,7 @@ const Customer = () => {
 	// Get API
 	const dataCustomer = [
 		{
-			id: "CHN001",
+			id: "C001",
 			Name: "Nguyễn Văn A001",
 			phoneNumber: "0000000000",
 			Address: "Mộ Lao-Hà Đông-Hà Nội",
@@ -52,27 +52,28 @@ const Customer = () => {
 							<td>{customer.Address}</td>
 							<td>
 								<Link
-									to={`${customer.id}`}
+									to={`/customer-detail?customerId=${customer.id}`}
 									type="button"
-									className="btn btn-outline-primary"
+									className="btn btn-outline-warning"
 									data-mdb-ripple-color="dark"
 								>
 									Edit
 								</Link>
-								<button
+								<Link
+									to={`/tickets?customerId=${customer.id}`}
 									type="button"
-									className="btn btn-outline-danger mx-2"
+									className="btn btn-outline-primary mx-2"
 									data-mdb-ripple-color="dark"
 								>
-									Delete
-								</button>
+									Show
+								</Link>
 							</td>
 						</tr>
 					))}
 				</tbody>
 			</table>
 			<div className="d-grid gap-2 mt-5">
-				<Link to="add" className="btn btn-success">
+				<Link to="/customer-detail" className="btn btn-success">
 					Thêm mới
 				</Link>
 			</div>

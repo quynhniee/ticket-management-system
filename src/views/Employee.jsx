@@ -11,7 +11,7 @@ const Employee = () => {
 			phoneNumber: "0000000000",
 		},
 		{
-			id_e: "E002",
+			id_e: "E050",
 			FullName: "Nguyễn Văn A002",
 			Role: "E",
 			phoneNumber: "0000000000",
@@ -60,28 +60,29 @@ const Employee = () => {
 								<Link
 									to={`${employee.id_e}`}
 									type="button"
-									className="btn btn-outline-primary"
+									className="btn btn-outline-warning"
 									data-mdb-ripple-color="dark"
 								>
 									Edit
 								</Link>
-								<button
+								<Link
+									to={`/tickets?employeeId=${employee.id_e}`}
 									type="button"
-									className="btn btn-outline-danger mx-2"
+									className="btn btn-outline-primary mx-2"
 									data-mdb-ripple-color="dark"
 								>
-									Delete
-								</button>
+									Show
+								</Link>
 							</td>
 						</tr>
 					))}
 				</tbody>
 			</table>
-			<div className="d-grid gap-2 mt-5">
+			{/* <div className="d-grid gap-2 mt-5">
 				<Link to="add" className="btn btn-success">
 					Thêm mới
 				</Link>
-			</div>
+			</div> */}
 		</div>
 	);
 };

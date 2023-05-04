@@ -106,7 +106,7 @@ const EmployeeDetail = () => {
 				<hr />
 
 				<div className="d-flex justify-content-end">
-					<Link to="/" className="btn btn-outline-warning mb-4 mx-3">
+					<Link to="/sonbh" className="btn btn-outline-warning mb-4 mx-3">
 						Cancel
 					</Link>
 					<button type="submit" className="btn btn-outline-primary mb-4">
